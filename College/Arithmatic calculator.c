@@ -1,35 +1,36 @@
 #include <stdio.h>
 int main()
 {
-int a,b;
+float a,b;
 char choice;
-printf("Enter the arithmatic operation you would like to perform(+,-,*,/,%%)=\n");
+printf("Enter the arithmatic operation you would like to perform(+,-,*,/)=\n");
 scanf("%c",&choice);
-if(choice== '+' ||choice== '-' ||choice== '*' ||choice== '/' ||choice== '%')
+if(choice== '+' ||choice== '-' ||choice== '*' ||choice== '/')
 {    
 printf("Enter the two operands=\n");
-scanf("%d%d",&a,&b);
+scanf("%f%f",&a,&b);
 switch(choice)
 {
     case '+':
-    printf("The sum is = %d", a + b);
+    printf("The sum is = %f", a + b);
     break;
 
     case '-':
-    printf("The difference is = %d", a - b);
+    printf("The difference is = %f", a - b);
     break;
 
     case '*':
-    printf("The product is = %d",a * b);
+    printf("The product is = %f",a * b);
     break;
 
-    case '/':
-    printf("The division is = %d",a / b);
-    break;
-
-    case '%':
-    printf("The modulous is = %d",a % b);
-    break;
+   case '/':
+     if (b == 0.0f) {
+      printf("Error: Division by zero is not allowed.\n");
+     } else 
+     {
+        printf("The division is = %.2f\n", a / b);
+     }
+     break;
     
     default:
     printf("The input in invalid");
